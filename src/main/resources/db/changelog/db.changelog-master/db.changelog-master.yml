@@ -1,9 +1,4 @@
 databaseChangeLog:
   - include:
-      # schema
-      file: db/changelog/xmlSchema.xml
-  - include:
       file: db/changelog/init.sql
       # data
-  - include:
-      file: db/changelog/data.xml
