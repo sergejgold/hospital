@@ -1,12 +1,15 @@
-spring.jpa.hibernate.ddl-auto=none
-server:
-  port: 9999
+
 spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: 0000
+    url: jdbc:postgresql://localhost:5432/hospitaldb
+    username: postgres
+    platform: postgres
+
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
-  datasource:
-    url: jdbc:postgresql://localhost:5432/hospitaldb
-    platform: postgres
-    username: postgres
-    password: 0000
-    driverClassName: org.postgresql.Driver
+
+
+
+
