@@ -2,13 +2,15 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    password: 0000
+    username: user
+    password: user
     url: jdbc:postgresql://localhost:5432/hospitaldb
-    username: postgres
     platform: postgres
 
   liquibase:
-    change-log: classpath:/db/changelog/db.changelog-master.yaml
+      change-log: classpath:/db/changelog/db.changelog-master/db.changelog-master.yml
+
+
 
 
 

@@ -33,15 +33,6 @@ CREATE TABLE providers (
 
 ALTER TABLE providers OWNER TO postgres;
 
-COPY encounters (encounter_id, provider_id, patient_id, encounter_dt, procedure_id) FROM stdin;
-\.
-COPY patient (patient_id, last_name, first_name) FROM stdin;
-\.
-COPY procedures (procedure_id, description) FROM stdin;
-\.
-COPY providers (provider_id, last_name, first_name) FROM stdin;
-\.
-
 ALTER TABLE ONLY encounters
     ADD CONSTRAINT "encounters_pkey" PRIMARY KEY (encounter_id);
 ALTER TABLE ONLY patient
