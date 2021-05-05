@@ -7,24 +7,24 @@ import java.util.List;
 @Entity
 public class Encounters {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long encounter_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long encounterId;
 
-    @OneToMany(mappedBy = "provider_id", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "providerId", fetch = FetchType.EAGER)
     private List<Providers> providers;
 
-    @OneToMany(mappedBy = "patient_id", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "patientId", fetch = FetchType.EAGER)
     private List<Patient> patient;
 
-    private LocalDate encounter_dt;
+    private LocalDate encounterDt;
 
-    @OneToMany(mappedBy = "procedure_id", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "procedureId", fetch = FetchType.EAGER)
     private List<Procedures> procedures;
 
     public Encounters() { }
 
-    public Long getEncounter_id() {
-        return encounter_id;
+    public Long getEncounterId() {
+        return encounterId;
     }
 
     public List<Providers> getProviders() {
@@ -35,8 +35,8 @@ public class Encounters {
         return patient;
     }
 
-    public LocalDate getEncounter_dt() {
-        return encounter_dt;
+    public LocalDate getEncounterDt() {
+        return encounterDt;
     }
 
     public List<Procedures> getProcedures() {
@@ -51,8 +51,8 @@ public class Encounters {
         this.patient = patient;
     }
 
-    public void setEncounter_dt(LocalDate encounter_dt) {
-        this.encounter_dt = encounter_dt;
+    public void setEncounterDt(LocalDate encounterDt) {
+        this.encounterDt = encounterDt;
     }
 
     public void setProcedures(List<Procedures> procedures) {
@@ -62,10 +62,10 @@ public class Encounters {
     @Override
     public String toString() {
         return "Encounters{" +
-                "encounter_id=" + encounter_id +
+                "encounterId=" + encounterId +
                 ", providers=" + providers +
                 ", patient=" + patient +
-                ", encounter_dt=" + encounter_dt +
+                ", encounter_dt=" + encounterDt +
                 ", procedures=" + procedures +
                 '}';
     }

@@ -5,37 +5,37 @@ import javax.persistence.*;
 @Entity
 public class Patient {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long patient_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long patientId;
 
-    private String last_name;
-    private String first_name;
+    private String lastName;
+    private String firstName;
 
     public Patient() {}
 
-    public Long getPatient_id() {
-        return patient_id;
+    public Long getPatientId() {
+        return patientId;
     }
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
     }
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String first_name) {
+        this.firstName = first_name;
     }
 
     @Override
     public String toString() {
         return "Patient{" +
-                "patient_id=" + patient_id +
-                ", last_name='" + last_name + '\'' +
-                ", first_name='" + first_name + '\'' +
+                "patientId=" + patientId +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
                 '}';
     }
 }

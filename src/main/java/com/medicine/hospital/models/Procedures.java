@@ -5,14 +5,15 @@ import javax.persistence.*;
 @Entity
 public class Procedures {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long procedure_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long procedureId;
 
     private String description;
+
     public Procedures() {}
 
-    public Long getProcedure_id() {
-        return procedure_id;
+    public Long getProcedureId() {
+        return procedureId;
     }
     public String getDescription() {
         return description;
@@ -25,7 +26,7 @@ public class Procedures {
     @Override
     public String toString() {
         return "Procedures{" +
-                "procedure_id=" + procedure_id +
+                "procedureId=" + procedureId +
                 ", description='" + description + '\'' +
                 '}';
     }
