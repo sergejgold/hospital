@@ -1,4 +1,4 @@
-package com.medicine.hospital.models;
+package com.medicine.hospital.model;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
