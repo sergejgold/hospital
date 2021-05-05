@@ -1,5 +1,8 @@
 package com.medicine.hospital.models;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -11,14 +14,17 @@ public class Encounters {
     private Long encounterId;
 
     @OneToMany(mappedBy = "providerId", fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Providers> providers;
 
     @OneToMany(mappedBy = "patientId", fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Patient> patient;
 
     private LocalDate encounterDt;
 
     @OneToMany(mappedBy = "procedureId", fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Procedures> procedures;
 
     public Encounters() { }
