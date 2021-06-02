@@ -26,9 +26,6 @@ public class Encounters {
     @OneToMany(mappedBy = "procedureId", fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Procedures> procedures;
-    //
-    //
-    //
     public Long getEncounterId() {
         return encounterId;
     }
