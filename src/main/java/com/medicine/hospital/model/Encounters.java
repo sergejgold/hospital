@@ -29,6 +29,7 @@ public class Encounters {
     //
     //
     //
+    //
     public Long getEncounterId() {
         return encounterId;
     }
