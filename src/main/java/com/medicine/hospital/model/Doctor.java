@@ -8,10 +8,10 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Patient {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long patientId;
-    private String lastName;
-    private String firstName;
+public class Doctor {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long providerId;
+        private String lastName;
+        private String firstName;
 }
