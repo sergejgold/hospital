@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Doctor {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long providerId;
+        private Long doctorId;
         private String lastName;
         private String firstName;
 }

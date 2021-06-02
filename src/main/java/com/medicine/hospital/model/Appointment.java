@@ -17,20 +17,20 @@ import java.util.List;
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long encounterId;
+    private Long appointmentId;
 
-    @OneToMany(mappedBy = "providerId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "doctorId", fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
-    private List<Doctor> providers;
+    private List<Doctor> doctor;
 
     @OneToMany(mappedBy = "patientId", fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Patient> patient;
 
-    private LocalDate encounterDt;
+    private LocalDate appointmentDt;
 
     @OneToMany(mappedBy = "procedureId", fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
-    private List<Procedure> procedures;
+    private List<Procedure> procedure;
 }
 
